@@ -63,8 +63,6 @@ export class LoginComponent implements OnInit {
     this.auth.login(formValue.email, formValue.password).pipe(first()).subscribe(
       (data: HttpResponse<any>) => {
         if(data.status == 200){
-          console.log(data.body.username)
-          console.log(data.headers.get('authorization'));
           this.tokenStorage.saveToken(data.headers.get('authorization'));
           this.tokenStorage.saveUser(data.body.username)
 

@@ -19,9 +19,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
 import {MatToolbarModule} from '@angular/material/toolbar'
 
 import { AuthService } from './services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CookieService } from 'ngx-cookie-service';
+import { InvoiceService } from './services/invoice.service';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
 
 
 
@@ -49,7 +51,11 @@ import { CookieService } from 'ngx-cookie-service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService,CookieService],
+  providers: [AuthService,CookieService,InvoiceService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
