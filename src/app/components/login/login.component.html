@@ -1,0 +1,30 @@
+<h1 class="heading">Login</h1>
+<section class="content">
+
+    
+    <form [formGroup]="loginForm" class="form" (ngSubmit)="login()">
+
+
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            
+            <mat-error *ngIf="email.invalid && email.touched">
+                Email required!
+            </mat-error>
+
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+            
+            <mat-error *ngIf="password.invalid && password.touched">
+                Password required!
+            </mat-error>
+
+           
+
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary" [disabled]="loginForm.invalid" type="submit">Login</button>
+    </form>
+</section>

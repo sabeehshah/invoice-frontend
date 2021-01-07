@@ -1,0 +1,41 @@
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading{
+    text-align: center;
+    font-size: 44px;
+    padding: 20px;
+}
+
+.info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 50%;
+    background:linear-gradient(90deg,#29ffc6,#20e3b2,#0cebeb);
+}
+
+button{
+    margin-top: 30px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
