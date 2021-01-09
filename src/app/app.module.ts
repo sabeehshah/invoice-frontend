@@ -17,6 +17,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
 import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatTableModule} from '@angular/material/table'
+import {MatPaginatorModule} from '@angular/material/paginator'
+import {MatSortModule} from '@angular/material/sort'
+
 
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,6 +28,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { InvoiceService } from './services/invoice.service';
 import { AuthInterceptor } from './_helpers/auth.interceptor';
+import { from } from 'rxjs';
+import { AuthGuard } from './guards/auth.guard';
+import { InvoiceDetailsComponent } from './components/invoice-details/invoice-details.component';
 
 
 
@@ -35,7 +42,8 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    InvoiceDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +57,12 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
     MatSnackBarModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     HttpClientModule
   ],
-  providers: [AuthService,CookieService,InvoiceService,{
+  providers: [AuthService,CookieService,InvoiceService,AuthGuard,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

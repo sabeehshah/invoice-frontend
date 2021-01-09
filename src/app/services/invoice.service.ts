@@ -26,6 +26,10 @@ export class InvoiceService {
 
   }
 
+  getInvoiceById(id:string):Observable<Invoice>{
+    return this.httpClient.get<Invoice>(base_URL + `api/invoices/${id}`)
+  }
+
  
 
 }

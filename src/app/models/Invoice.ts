@@ -10,7 +10,7 @@ export interface Invoice {
     issueDate:string,
     taxAmtPercentage:number,
     taxAmtValue:number,
-    totalAmtDue:number,
+    total:number,
     lineItems:LineItem[]
 }
 
