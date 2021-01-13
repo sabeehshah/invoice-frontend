@@ -1,3 +1,4 @@
+import { Address } from "./Address";
 import { LineItem } from "./LineItem"
 
 export interface Invoice {
@@ -5,7 +6,9 @@ export interface Invoice {
     createdBy:string,
     invoiceFrom:string,
     invoiceTo:string,
-    address:string,
+    companyPhone:string,
+    companyAddress:Address,
+    billingAddress:Address,
     dueDate:string,
     issueDate:string,
     taxAmtPercentage:number,

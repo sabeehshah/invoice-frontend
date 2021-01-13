@@ -31,7 +31,10 @@ import { AuthInterceptor } from './_helpers/auth.interceptor';
 import { from } from 'rxjs';
 import { AuthGuard } from './guards/auth.guard';
 import { InvoiceDetailsComponent } from './components/invoice-details/invoice-details.component';
+import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
 
+
+import {GooglePlaceModule} from "ngx-google-places-autocomplete";
 
 
 
@@ -43,7 +46,8 @@ import { InvoiceDetailsComponent } from './components/invoice-details/invoice-de
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    InvoiceDetailsComponent
+    InvoiceDetailsComponent,
+    AddInvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,8 @@ import { InvoiceDetailsComponent } from './components/invoice-details/invoice-de
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    GooglePlaceModule
   ],
   providers: [AuthService,CookieService,InvoiceService,AuthGuard,{
     provide: HTTP_INTERCEPTORS,

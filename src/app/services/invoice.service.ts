@@ -30,6 +30,10 @@ export class InvoiceService {
     return this.httpClient.get<Invoice>(base_URL + `api/invoices/${id}`)
   }
 
+  createNewInvoice(invoice:Invoice):Observable<any>{
+    return this.httpClient.post<Invoice>(base_URL + `api/invoices`, invoice)
+  }
+
  
 
 }

@@ -1,12 +1,11 @@
 <div class="content">
     <div class="left-side">
         <span class="left big">{{invoice.invoiceFrom}}</span>
-        <span class="left medium">202-555-0826</span>
+        <span class="left medium">{{invoice.companyPhone}}</span>
     </div>
     <div class="right-side address">
-        <span class="right addr">1912 Harvest Lane</span>
-        <span class="right addr">New York, NYJ12210</span>
-        <span class="right addr">United States</span>
+        <span class="right addr">{{invoice.companyAddress}}</span>
+        
     </div>
 
   
@@ -15,8 +14,10 @@
 <div class="mid-content row">
     <div class="col s4 m4 info-left">
         <span class="data-title">Billed To</span>
-        <span class="data">Adam Johnson</span>
         <span class="data">{{invoice.invoiceTo}}</span>
+        <span class="data">{{invoice.billingAddress}}</span>
+       
+
     </div>
     <div class="col s4 m4 info-middle">
         <span class="middle data-title">Invoice Date</span>
@@ -63,4 +64,20 @@
         </tbody>
     </table>
 </div>
+
+<div class="end-content right">
+    <div class="label">
+        <span class="lbl">Subtotal</span>
+        <span class="lbl">Tax ({{invoice.taxAmtPercentage}}%)</span>
+        <span class="lbl">Amount Due</span>
+    </div>
+
+    <div class="value">
+        <span class="val">{{subtotal | currency:'CAD'}}</span>
+        <span class="val">{{invoice.taxAmtValue | currency:'CAD'}}</span>
+        <span class="val total">{{invoice.total | currency:'CAD'}}</span>
+    </div>
+</div>
+
+
 

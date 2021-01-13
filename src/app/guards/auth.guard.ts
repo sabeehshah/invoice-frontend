@@ -33,6 +33,7 @@ export class AuthGuard implements CanActivate {
       }else{
         console.log('doesnt exist')
         resolve(false);
+        this.token.signOut();
         this.router.navigate(['/login']);
         
       }

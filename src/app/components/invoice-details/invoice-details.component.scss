@@ -124,3 +124,48 @@ td,th{
     font-weight: bold;
     padding: 10px;
 }
+
+.end-content{
+    display: flex;
+    align-items: flex-end;
+}
+
+.label{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 15px;
+    gap: 10px;
+}
+
+.value{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: flex-end;
+    font-size: 18px;
+    gap: 10px;
+}
+
+.lbl{
+    color: gray;
+}
+
+.val{
+    font-weight: bold;
+}
+
+.total{
+    font-size: 20px;
+}
+
+.label>.lbl:nth-child(3){
+    margin-top: 15px;
+}
+
+.value>.val:nth-child(3){
+    margin-top: 15px;
+}
+

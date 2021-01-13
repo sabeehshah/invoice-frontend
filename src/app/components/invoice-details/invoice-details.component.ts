@@ -10,10 +10,11 @@ import { InvoiceService } from 'src/app/services/invoice.service';
 })
 export class InvoiceDetailsComponent implements OnInit {
 
-  id:string;
-  invoice:Invoice
+  id: string;
+  invoice: Invoice;
+  subtotal: number = 0;
 
-  constructor(private invoiceService:InvoiceService, private router:Router, private route:ActivatedRoute) { }
+  constructor(private invoiceService: InvoiceService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
@@ -21,9 +22,12 @@ export class InvoiceDetailsComponent implements OnInit {
     this.getInvoice()
   }
 
-  async getInvoice(){
-   await this.invoiceService.getInvoiceById(this.id).subscribe((data)=>{
+  async getInvoice() {
+    await this.invoiceService.getInvoiceById(this.id).subscribe((data) => {
       this.invoice = data;
+      for (let i = 0; i < this.invoice.lineItems.length; i++) {
+        this.subtotal += this.invoice.lineItems[i].subTotal;
+      }
     })
   }
 

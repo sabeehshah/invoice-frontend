@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
           this.tokenStorage.saveToken(data.headers.get('authorization'));
           this.tokenStorage.saveUser(data.body.username)
 
-          this.snackbar.open("Login Success","close",{duration:5000})
+          this.snackbar.open("Login Success","close",{duration:10000})
           this.router.navigate(['/']).then(()=>{
             window.location.reload()
           })
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
       errors => {
         
         this.loading = false;
-        this.snackbar.open("Login Fail","close",{duration:5000})
+        this.snackbar.open("Login Fail","close",{duration:10000})
         this.isLoginFailed = true;
         console.log(errors)
 

@@ -19,13 +19,13 @@ export class AuthInterceptor implements HttpInterceptor {
     let authReq = req;
     const token = this.token.getToken();
     if (token != null) {
-      authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token) });
+      authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, token) });
     }
     return next.handle(authReq).pipe(catchError(err =>{
       if(err.status === 401){
         this.token.signOut();
         this.snackbar.open("Your authentication timed out!", "Okay")
-        this.router.navigate(['login']).then(()=>{
+        this.router.navigate(['/login']).then(()=>{
           window.location.reload()
         });
       }
