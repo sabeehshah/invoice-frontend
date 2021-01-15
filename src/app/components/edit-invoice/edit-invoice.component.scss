@@ -1,0 +1,151 @@
+.main-content{
+    background-color: #353535;
+  }
+  
+  
+  .main-fields {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding: 15px;
+  }
+  
+  .main-fields input {
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .sub-fields-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sub-fields-group input{
+      font-family: "Poppins", sans-serif;
+  
+  }
+  
+  .basic-input {
+    margin-top: 1rem;
+  }
+  
+  
+  .sub-field-input {
+    margin-right: 1rem;
+  }
+  
+  .sub-fields {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+  }
+  
+  .errorMsg {
+    color: red;
+  }
+  
+  .btn-add-line-item {
+    background: #e91e63 !important;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+  
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-add-invoice {
+    background: #69f0ae;
+    color: black;
+    width: auto;
+  }
+  
+  .heading {
+    text-align: center;
+    color: white;
+  }
+  
+  
+  
+  .form {
+    width: 100%;
+  }
+  
+  .template {
+    width: 50%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  tr:nth-of-type(odd) {
+    background: #eee;
+  }
+  
+  th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+  }
+  
+  td,
+  th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .form {
+    padding: 5px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .main-fields {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: center; */
+      width: 100%;
+      align-content: space-between;
+      padding: 20px;
+      margin: 0;
+    }
+  
+    .column {
+      width: 100%;
+    }
+  
+    .sub-fields-group {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      /* flex-basis: 100%; */
+      /* flex: 1; */
+      width: 100%;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid black;
+      padding: 5px;
+      /* flex-wrap: wrap;*/
+    }
+  }
+  
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  

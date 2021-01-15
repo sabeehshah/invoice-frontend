@@ -12,3 +12,15 @@
     justify-content: flex-end;
     padding: 15px;
 }
+
+.charts{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divChart{
+    display: block;
+    width: 50%;
+    height: 400px;
+}

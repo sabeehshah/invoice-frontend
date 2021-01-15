@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EditInvoiceComponent } from './components/edit-invoice/edit-invoice.component';
 import { InvoiceDetailsComponent } from './components/invoice-details/invoice-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'', component:DashboardComponent, canActivate:[AuthGuard]},
   {path:'invoice/add', component:AddInvoiceComponent,canActivate:[AuthGuard]},
   {path:'invoice/:id', component:InvoiceDetailsComponent, canActivate:[AuthGuard]},
+  {path:'invoice/edit/:id', component:EditInvoiceComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

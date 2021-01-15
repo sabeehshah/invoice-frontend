@@ -1,0 +1,190 @@
+<div class="main-content">
+    <h1 class="heading">Edit Invoice</h1>
+
+    <div class="form">
+        <form [formGroup]="invoiceForm" (ngSubmit)="submitHandler()">
+
+
+
+            <div class="main-fields">
+
+                <div class="column">
+                    <mat-form-field class="basic-input">
+                        <mat-label>Invoice From:</mat-label>
+                        <input matInput #invoiceFrom maxlength="50" formControlName="invoiceFrom">
+                        <mat-hint align="start"><strong>Who is this invoice from?</strong> </mat-hint>
+                        <mat-hint align="end">{{invoiceFrom.value.length}} / 50</mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('invoiceFrom').errors?.required && invoiceForm.get('invoiceFrom').touched">
+                            Invoice From - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="basic-input">
+                        <mat-label>Company Phone #:</mat-label>
+                        <input matInput formControlName="companyPhone">
+                        <mat-hint align="start"><strong>Company's (from) Phone #</strong> </mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('companyPhone').errors?.required && invoiceForm.get('companyPhone').touched">
+                            Company Phone - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="basic-input">
+                        <mat-label>Billed To:</mat-label>
+                        <input matInput #billTo maxlength="50" formControlName="invoiceTo">
+                        <mat-hint align="start"><strong>Who is this invoice for?</strong> </mat-hint>
+                        <mat-hint align="end">{{invoiceTo.value.length}} / 50</mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('invoiceTo').errors?.required && invoiceForm.get('invoiceTo').touched">
+                            Billing To - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="basic-input">
+                        <mat-label>Company Address:</mat-label>
+                        <input ngx-google-places-autocomplete [options]='options'
+                            (onAddressChange)="CompanyAddressChange($event)" matInput maxlength="50"
+                            formControlName="companyAddress">
+                        <mat-hint align="start"><strong>Company Address</strong> </mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('companyAddress').errors?.required && invoiceForm.get('companyAddress').touched">
+                            Company Address - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+                </div>
+
+                <div class="column">
+
+
+
+                    <mat-form-field class="basic-input">
+                        <mat-label>Billing Address:</mat-label>
+                        <input ngx-google-places-autocomplete [options]='options'
+                            (onAddressChange)="BillingAddressChange($event)" matInput maxlength="50"
+                            formControlName="billingAddress">
+                        <mat-hint align="start"><strong>Billing Address</strong> </mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('billingAddress').errors?.required && invoiceForm.get('billingAddress').touched">
+                            Billing Address - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="basic-input">
+                        <mat-label>Issue Date:</mat-label>
+                        <input matInput type="date" formControlName="issueDate">
+                        <mat-hint align="start"><strong>Invoice Issue Date</strong> </mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('issueDate').errors?.required && invoiceForm.get('issueDate').touched">
+                            Issue Date - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="basic-input">
+                        <mat-label>Due Date:</mat-label>
+                        <input matInput type="date" formControlName="dueDate">
+                        <mat-hint align="start"><strong>Invoice Due Date</strong> </mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('dueDate').errors?.required && invoiceForm.get('dueDate').touched">
+                            Due Date - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="basic-input taxInput">
+                        <mat-label>Tax Percentage:</mat-label>
+                        <input matInput #taxAmtPercentage type="number" formControlName="taxAmtPercentage">
+                        <mat-hint align="start"><strong>Tax Percentage GST/HST? ex. 13</strong> </mat-hint>
+                        <mat-hint align="end">{{taxAmtPercentage.value / 100 | percent:'1.2'}}</mat-hint>
+                        <mat-error class="errorMsg"
+                            *ngIf="invoiceForm.get('taxAmtPercentage').errors?.required && invoiceForm.get('taxAmtPercentage').touched">
+                            Tax Percentage - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="sub-fields" formArrayName="lineItems">
+
+                <h2 class="heading">Line Items</h2>
+
+                <div class="sub-fields-group" *ngFor="let lineItem of lineItemForms.controls;let i = index"
+                    [formGroupName]="i">
+
+                    <mat-form-field class="basic-input sub-field-input">
+                        <mat-label>Item Name:</mat-label>
+                        <input matInput #itemName formControlName="itemName">
+                        <mat-error class="errorMsg"
+                            *ngIf="lineItemForms.controls[i].get('itemName').errors?.required && lineItemForms.controls[i].get('itemName').touched">
+                            Item Name - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+                    <mat-form-field class="basic-input sub-field-input">
+                        <mat-label>Item Qty:</mat-label>
+                        <input type="number" matInput #itemQty formControlName="itemQty">
+                        <mat-error class="errorMsg"
+                            *ngIf="lineItemForms.controls[i].get('itemQty').errors?.required && lineItemForms.controls[i].get('itemQty').touched">
+                            Item Qty - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+
+                    <mat-form-field class="basic-input sub-field-input">
+                        <mat-label>Item Price:</mat-label>
+                        <input type="number" matInput #itemPrice formControlName="itemPrice">
+                        <mat-error class="errorMsg"
+                            *ngIf="lineItemForms.controls[i].get('itemPrice').errors?.required && lineItemForms.controls[i].get('itemPrice').touched">
+                            Item Qty - Required.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="basic-input sub-field-input">
+                        <mat-label>Item Subtotal:</mat-label>
+                        <input type="number" value="{{lineItemForms.controls[i].get('subTotal').value}}" matInput
+                            disabled>
+
+                    </mat-form-field>
+
+                    <button (click)="deleteLineItem(i)" mat-raised-button color="warn">Delete</button>
+
+                </div>
+
+                <button class="btn-add-line-item" type="button" mat-raised-button [hidden]="success"
+                    (click)="addLineItem()">Add
+                    Line Item</button>
+
+            </div>
+
+
+
+
+
+
+            <div class="buttons">
+                <button [disabled]="invoiceForm.invalid" class="btn-add-invoice" color="primary" mat-raised-button>Save
+                    Invoice</button>
+            </div>
+            
+        </form>
+
+    </div>
+
+
+
+</div>

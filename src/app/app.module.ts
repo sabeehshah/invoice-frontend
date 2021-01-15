@@ -35,6 +35,7 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
 
 
 import {GooglePlaceModule} from "ngx-google-places-autocomplete";
+import { EditInvoiceComponent } from './components/edit-invoice/edit-invoice.component';
 
 
 
@@ -47,7 +48,8 @@ import {GooglePlaceModule} from "ngx-google-places-autocomplete";
     SignupComponent,
     DashboardComponent,
     InvoiceDetailsComponent,
-    AddInvoiceComponent
+    AddInvoiceComponent,
+    EditInvoiceComponent
   ],
   imports: [
     BrowserModule,
