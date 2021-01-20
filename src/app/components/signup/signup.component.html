@@ -2,6 +2,8 @@
 
 <section class="content">
 
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
 
     <form [formGroup]="signupForm" class="form" (ngSubmit)="signup()">
 

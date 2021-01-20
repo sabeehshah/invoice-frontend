@@ -2,10 +2,12 @@
 .content{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    gap: 15px;
 }
 
 .heading{
@@ -29,9 +31,15 @@
     align-items: center;
     padding: 10px;
     width: 50%;
-    background:linear-gradient(90deg,#29ffc6,#20e3b2,#0cebeb);
+    // background:linear-gradient(90deg,#29ffc6,#20e3b2,#0cebeb);
+    background: #353535;
+
 }
 
 button{
     margin-top: 30px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
 }
