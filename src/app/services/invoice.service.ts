@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Invoice } from '../models/invoice';
+import { Invoice } from '../models/Invoice';
 import { LineItem } from '../models/LineItem';
 import { catchError, map } from 'rxjs/operators';
 

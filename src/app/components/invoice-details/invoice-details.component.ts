@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Invoice } from 'src/app/models/invoice';
+import { Invoice } from 'src/app/models/Invoice';
 import { InvoiceService } from 'src/app/services/invoice.service';
 
 @Component({

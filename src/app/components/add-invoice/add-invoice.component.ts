@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, _SnackBarContainer } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Address } from 'src/app/models/Address';
-import { Invoice } from 'src/app/models/invoice';
+import { Invoice } from 'src/app/models/Invoice';
 
 import { InvoiceService } from 'src/app/services/invoice.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';

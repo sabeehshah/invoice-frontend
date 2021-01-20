@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Invoice } from 'src/app/models/invoice';
+import { Invoice } from 'src/app/models/Invoice';
 import { InvoiceService } from 'src/app/services/invoice.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 

@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Invoice } from 'src/app/models/invoice';
+import { Invoice } from 'src/app/models/Invoice';
 import { InvoiceService } from 'src/app/services/invoice.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
