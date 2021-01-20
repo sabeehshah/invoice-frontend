@@ -37,7 +37,7 @@ export class InvoiceDetailsComponent implements OnInit {
       this.invoiceService.deleteInvoiceById(this.id).subscribe((data)=>{
         
       })
-      this.router.navigate(['/']).then((navigated:boolean)=>{
+      this.router.navigate(['/dashboard']).then((navigated:boolean)=>{
         if(navigated){
           this.snackbar.open('Invoice Deleted', 'close',{duration:10000});
         }else{

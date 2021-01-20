@@ -1,6 +1,8 @@
 <h1 class="heading">Login</h1>
 <section class="content">
 
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
     
     <form [formGroup]="loginForm" class="form" (ngSubmit)="login()">
 

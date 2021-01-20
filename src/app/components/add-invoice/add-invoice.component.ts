@@ -186,7 +186,7 @@ export class AddInvoiceComponent implements OnInit, OnDestroy {
         console.log(invoice);
 
        
-        this.router.navigate(['/']).then((navigated:boolean)=>{
+        this.router.navigate(['/dashboard']).then((navigated:boolean)=>{
           if(navigated){
             this.snackbar.open('New Invoice Created!','close',{duration:10000})
           }else{

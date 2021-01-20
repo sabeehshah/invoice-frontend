@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
           this.tokenStorage.saveUser(data.body.username)
 
           this.snackbar.open("Login Success","close",{duration:10000})
-          this.router.navigate(['/']).then(()=>{
+          this.router.navigate(['/dashboard']).then(()=>{
             window.location.reload()
           })
           

@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatTableModule} from '@angular/material/table'
 import {MatPaginatorModule} from '@angular/material/paginator'
 import {MatSortModule} from '@angular/material/sort'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 import { AuthService } from './services/auth.service';
@@ -36,6 +37,8 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
 
 import {GooglePlaceModule} from "ngx-google-places-autocomplete";
 import { EditInvoiceComponent } from './components/edit-invoice/edit-invoice.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -49,7 +52,9 @@ import { EditInvoiceComponent } from './components/edit-invoice/edit-invoice.com
     DashboardComponent,
     InvoiceDetailsComponent,
     AddInvoiceComponent,
-    EditInvoiceComponent
+    EditInvoiceComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { EditInvoiceComponent } from './components/edit-invoice/edit-invoice.com
     MatDatepickerModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatProgressBarModule,
     MatToolbarModule,
     ReactiveFormsModule,
     MatTableModule,

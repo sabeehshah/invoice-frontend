@@ -135,7 +135,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
               precision:0
             }
           }]
-        }
+        },
+        responsive:true
       }
     });
   }
