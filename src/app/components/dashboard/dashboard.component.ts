@@ -30,12 +30,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private invoiceService: InvoiceService, private tokenStorageService: TokenStorageService, private router: Router) {
-
+    this.getInvoices();
   }
 
   ngOnInit(): void {
 
-    this.getInvoices();
+    
 
   }
 
@@ -77,10 +77,17 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   countInvoicesIssuedByMonth(): number[] {
     // Create array of 12 items init'd at 0
     // increment the count of each month
-    const monthCountArr = new Array(12).fill(0);
-    this.invoiceList.forEach(({ issueDate }) => monthCountArr[new Date(issueDate).getMonth()] += 1);
-    console.log(monthCountArr);
-    return monthCountArr;
+
+    if(this.invoiceList.length > 0){
+      const monthCountArr = new Array(12).fill(0);
+      this.invoiceList.forEach(({ issueDate }) => monthCountArr[new Date(issueDate).getMonth()] += 1);
+      console.log(monthCountArr);
+      return monthCountArr;
+    }else{
+      return [0,0,0,0,0,0,0,0,0,0,0,0]
+    }
+
+    
   }
 
   displayInvoiceCountByMonthChart() {

@@ -50,17 +50,20 @@ export class SignupComponent implements OnInit {
     this.loading = true;
 
     const formValue = this.signupForm.value;
+    console.log(formValue)
 
     this.auth.signup(formValue.username,formValue.password,formValue.email).pipe(first()).subscribe(
       (data:HttpResponse<any>)=>{
         console.log(data)
         if(data.status == 200){
-          this.snackBar.open("Congrats! You signed up successfully.","Close")
+          this.snackBar.open("Congrats! You signed up successfully.","Close",{duration:10000})
           this.router.navigate(['/login']);
         }
       },
       errors =>{
-        this.loading = false
+        this.loading = false;
+        this.snackBar.open("Signup Fail","close",{duration:10000})
+        console.log(errors)
       })
   }
 

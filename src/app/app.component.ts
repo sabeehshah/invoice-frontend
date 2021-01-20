@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import * as M from "materialize-css/dist/js/materialize";
 import { TokenStorageService } from './services/token-storage.service';
 
@@ -13,7 +15,7 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   username?: string;
 
-  constructor(private tokenStorageService:TokenStorageService){
+  constructor(private tokenStorageService:TokenStorageService, private snackbar:MatSnackBar, private router:Router){
 
   }
 
@@ -33,7 +35,18 @@ export class AppComponent implements OnInit {
 
   logout():void{
     this.tokenStorageService.signOut();
-    window.location.reload();
+
+    this.router.navigate([`/`]).then((navigated:boolean)=>{
+      if(navigated){
+        this.snackbar.open('Successfully Logged Out!', 'close',{duration:10000});
+      }else{
+        this.snackbar.open('Something went wrong!','close',{duration:10000})
+      }
+    });
+
+
+   
+
   }
 }
 

@@ -76,7 +76,6 @@ export class AddInvoiceComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.lineItemValueChanges.unsubscribe();
-    this.taxAmtValueChanges.unsubscribe();
   }
 
   get lineItemForms() {

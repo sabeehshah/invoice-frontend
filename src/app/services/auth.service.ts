@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   signup(username:string,password:string,email:string):Observable<any>{
-    return this.httpClient.post<any>(base_URL+'authenticate',
+    return this.httpClient.post<any>(base_URL+'authenticate/signup',
     {
       username:username,
       password:password,
