@@ -43,3 +43,15 @@ button{
 ::ng-deep .mat-form-field-underline {
     display: none;
 }
+
+@media screen and (max-width:768px){
+    .content{
+        width: 100%;
+        padding: 20px;
+        gap: 0px;
+    }
+
+    .form{
+        width: 100%;
+    }
+}

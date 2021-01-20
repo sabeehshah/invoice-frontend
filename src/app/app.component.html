@@ -3,26 +3,26 @@
     <a href="" routerLink="/" class="brand-logo left">Invoice-App</a>
     <a href="" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="/home" routerLink="/">Home</a></li>
-      <li><a *ngIf="isLoggedIn" href="/dashboard" routerLink="/dashboard">Dashboard</a></li>
+      <li><a class="sidenav-close" href="/home" routerLink="/">Home</a></li>
+      <li><a class="sidenav-close" *ngIf="isLoggedIn" href="/dashboard" routerLink="/dashboard">Dashboard</a></li>
 
-      <li><a href="/about-us" routerLink="/about">About Us</a></li>
-      <li><a *ngIf="!isLoggedIn" href="/signup" routerLink="/signup">Sign Up</a></li>
-      <li><a *ngIf="!isLoggedIn" href="/login" routerLink="/login">Login</a></li>
-      <li><a *ngIf="isLoggedIn" href="" (click)="logout()">Logout</a></li>
+      <li><a class="sidenav-close" href="/about-us" routerLink="/about">About Us</a></li>
+      <li><a class="sidenav-close" *ngIf="!isLoggedIn" href="/signup" routerLink="/signup">Sign Up</a></li>
+      <li><a class="sidenav-close" *ngIf="!isLoggedIn" href="/login" routerLink="/login">Login</a></li>
+      <li><a class="sidenav-close" *ngIf="isLoggedIn" href="" (click)="logout()">Logout</a></li>
 
     </ul>
   </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="/home" routerLink="/">Home</a></li>
-  <li><a *ngIf="isLoggedIn" href="/dashboard" routerLink="/dashboard">Dashboard</a></li>
+  <li><a class="sidenav-close" href="/home" routerLink="/">Home</a></li>
+  <li><a class="sidenav-close" *ngIf="isLoggedIn" href="/dashboard" routerLink="/dashboard">Dashboard</a></li>
 
-  <li><a href="/about-us" routerLink="/about">About Us</a></li>
-  <li><a *ngIf="!isLoggedIn" href="/signup" routerLink="/signup">Sign Up</a></li>
-  <li><a *ngIf="!isLoggedIn" href="/login" routerLink="/login">Login</a></li>
-  <li><a *ngIf="isLoggedIn" href="" (click)="logout()">Logout</a></li>
+  <li><a class="sidenav-close" href="/about-us" routerLink="/about">About Us</a></li>
+  <li><a class="sidenav-close" *ngIf="!isLoggedIn" href="/signup" routerLink="/signup">Sign Up</a></li>
+  <li><a class="sidenav-close" *ngIf="!isLoggedIn" href="/login" routerLink="/login">Login</a></li>
+  <li><a class="sidenav-close" *ngIf="isLoggedIn" href="" (click)="logout()">Logout</a></li>
 
 </ul>
 
