@@ -26,7 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
         this.token.signOut();
         this.snackbar.open("Your authentication timed out!", "Okay")
         this.router.navigate(['/login']).then(()=>{
-          window.location.reload()
+          // window.location.reload()
         });
       }
 
