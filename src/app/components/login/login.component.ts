@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
 
           this.snackbar.open("Login Success","close",{duration:10000})
           this.router.navigate(['/dashboard']).then(()=>{
-            window.location.reload()
+            // window.location.reload()
           })
           
         }
